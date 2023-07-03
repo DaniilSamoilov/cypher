@@ -1,0 +1,19 @@
+﻿<Window x:Class="cypher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cypher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="input_1" HorizontalAlignment="Left" Margin="19,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="23"/>
+        <TextBox x:Name="output_1" HorizontalAlignment="Left" Margin="176,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="23"/>
+        <TextBox x:Name="output_2" HorizontalAlignment="Left" Margin="598,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="21"/>
+        <TextBox x:Name="input_2" HorizontalAlignment="Left" Margin="455,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="21"/>
+        <Button x:Name="encrypt" Content="Зашифровать" HorizontalAlignment="Left" Margin="131,63,0,0" VerticalAlignment="Top" Click="encrypt_Click"/>
+        <Button x:Name="decrypt" Content="Расшифровать" HorizontalAlignment="Left" Margin="572,66,0,0" VerticalAlignment="Top" Click="decrypt_Click"/>
+        <Button x:Name="copy" Content="-&gt;" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" Click="copy_Click"/>
+
+    </Grid>
+</Window>
