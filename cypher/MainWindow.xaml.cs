@@ -24,6 +24,7 @@ namespace cypher
         
         RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
         UnicodeEncoding converter = new UnicodeEncoding();
+        byte[] data;
         RSAParameters privateKey;
         RSAParameters publicKey;
         public MainWindow()
@@ -35,24 +36,12 @@ namespace cypher
         }
         private void encrypt_Click(object sender, RoutedEventArgs e)
         {
-            byte[] data = RSAencrypt(converter.GetBytes(input_1.Text), publicKey, false);
+            data = RSAencrypt(converter.GetBytes(input_1.Text), publicKey, false);
             output_1.Text = Encoding.Unicode.GetString(data);
-            byte[] data2 = converter.GetBytes(output_1.Text);
-            if (data == data2)
-            {
-                MessageBox.Show("Одинаковы");
-            }
-            for (int i = 0; i < data.Length; i++)
-            {
-                if (data[i] != data2[i])
-                {
-                    MessageBox.Show(i.ToString()+ "\r" + data[i].ToString() +" "+ data2[i].ToString());
-                }
-            }
         }
         private void decrypt_Click(object sender, RoutedEventArgs e)
         {
-            byte[] data = RSAdecrypt(converter.GetBytes(input_2.Text), privateKey, false);
+            data = RSAdecrypt(data, privateKey, false);
             output_2.Text = Encoding.Unicode.GetString(data);
         }
         private byte[] RSAencrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
